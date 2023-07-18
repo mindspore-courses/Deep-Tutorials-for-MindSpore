@@ -1,0 +1,6 @@
+mindspore==2.0.0
+tqdm
+pylint
+h5py
+mindcv
+imageio

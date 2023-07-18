@@ -28,4 +28,4 @@ jobs:
         pip install -r requirements.txt
     - name: Analysing the ImageCaption code with pylint
       run: |
-        pylint ImageCaption --rcfile=.github/pylint.conf
+        pylint ImageCaptioning --rcfile=.github/pylint.conf

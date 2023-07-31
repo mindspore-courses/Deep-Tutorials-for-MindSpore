@@ -2,11 +2,11 @@ name: CI Pipe
 
 on:
   pull_request:
-    branches: [ "master" ]
+    branches: [ "main" ]
     paths:
       - 'ImageCaptioning/**'
   push:
-    branches: [ "master" ]
+    branches: [ "main" ]
     paths:
       - 'ImageCaptioning/**'
 

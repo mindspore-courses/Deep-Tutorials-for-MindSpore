@@ -257,7 +257,12 @@ def save_model(data_name, epoch, decoder, is_best=False):
         # save_checkpoint(encoder, 'BEST_' + encoder_filename)
         save_checkpoint(decoder, 'BEST_' + decoder_filename)
 
-def pack_padded(input, lengths):
-    packed_tensor = input[:, :max(lengths)]
+def adjust_shape(input_tensor, lengths):
+    """
+    adjust shape for criterion
+    """
+
+    packed_tensor = input_tensor[:, :max(lengths)]
     packed_tensor = packed_tensor.flatten(start_dim=0, end_dim=1)
     return packed_tensor
+  

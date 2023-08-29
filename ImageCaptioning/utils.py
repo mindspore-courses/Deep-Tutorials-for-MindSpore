@@ -265,3 +265,4 @@ def adjust_shape(input_tensor, lengths):
     packed_tensor = input_tensor[:, :max(lengths)]
     packed_tensor = packed_tensor.flatten(start_dim=0, end_dim=1)
     return packed_tensor
+  

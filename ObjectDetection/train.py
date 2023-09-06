@@ -61,7 +61,7 @@ def forward_fn(images, boxes, labels):
     loss = criterion(predicted_locs, predicted_scores, boxes, labels)
     return loss
 
-grad_fn = mindspore.value_and_grad(forward_fn, None, optimizer.trainable_params(), False)
+grad_fn = mindspore.value_and_grad(forward_fn, None, optimizer.parameter, False)
 
 def train_step(images, boxes, labels):
     """train step"""

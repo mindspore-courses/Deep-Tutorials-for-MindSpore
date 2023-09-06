@@ -4,3 +4,11 @@ pylint
 h5py
 mindcv
 imageio
+pandas
+gensim
+nltk
+youtokentome
+sacrebleu
+wget
+scikit-learn
+scikit-image

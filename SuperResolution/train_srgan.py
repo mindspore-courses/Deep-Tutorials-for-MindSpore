@@ -106,8 +106,8 @@ grad_fn_d = mindspore.value_and_grad(forward_fn_d, None, discriminator.trainable
 
 def train_step(low_img, high_img):
     """train step"""
-    grad_g, (_, content_loss, adversarial_loss_g) = grad_fn_g(low_img, high_img)
-    grad_d, adversarial_loss_d = grad_fn_d(low_img, high_img)
+    (_, content_loss, adversarial_loss_g), grad_g = grad_fn_g(low_img, high_img)
+    adversarial_loss_d, grad_d = grad_fn_d(low_img, high_img)
 
     if grad_clip is not None:
         grad_g = clip_gradient(grad_g, grad_clip)

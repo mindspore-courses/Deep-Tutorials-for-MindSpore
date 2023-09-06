@@ -45,12 +45,12 @@ jobs:
     - name: Analysing the SequenceLabeling code with pylint
       run: |
         pylint SequenceLabeling --rcfile=.github/pylint.conf
-    # - name: Analysing the TextClassification code with pylint
-    #   run: |
-    #     pylint TextClassification --rcfile=.github/pylint.conf
+    - name: Analysing the TextClassification code with pylint
+      run: |
+        pylint TextClassification --rcfile=.github/pylint.conf
     # - name: Analysing the MachineTranslation code with pylint
     #   run: |
     #     pylint MachineTranslation --rcfile=.github/pylint.conf
-    # - name: Analysing the SuperResolution code with pylint
-    #   run: |
-    #     pylint SuperResolution --rcfile=.github/pylint.conf
+    - name: Analysing the SuperResolution code with pylint
+      run: |
+        pylint SuperResolution --rcfile=.github/pylint.conf

@@ -152,8 +152,8 @@ def init_embedding(embeddings):
 
     :param embeddings: embedding tensor
     """
-    bias = np.sqrt(3.0 / embeddings.size(1))
-    ops.uniform(embeddings, -bias, bias)
+    bias = np.sqrt(3.0 / embeddings.shape[1])
+    return ops.uniform(embeddings, -bias, bias)
 
 def load_embeddings(emb_file, word_map):
     """
@@ -170,7 +170,7 @@ def load_embeddings(emb_file, word_map):
 
     vocab = set(word_map.keys())
     embeddings = mindspore.Tensor((len(vocab), emb_dim), dtype=mindspore.float32)
-    init_embedding(embeddings)
+    embeddings = init_embedding(embeddings)
 
     print("\nLoading embeddings...")
     for line in open(emb_file, 'r', encoding='utf-8'):

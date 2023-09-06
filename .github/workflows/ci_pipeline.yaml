@@ -5,10 +5,20 @@ on:
     branches: [ "main" ]
     paths:
       - 'ImageCaptioning/**'
+      - 'SequenceLabeling/**'
+      - 'MachineTranslation/**'
+      - 'ObjectDetection/**'
+      - 'SuperResolution/**'
+      - 'TextClassification/**'
   push:
     branches: [ "main" ]
     paths:
       - 'ImageCaptioning/**'
+      - 'SequenceLabeling/**'
+      - 'MachineTranslation/**'
+      - 'ObjectDetection/**'
+      - 'SuperResolution/**'
+      - 'TextClassification/**'
 
 permissions:
   contents: read
@@ -26,6 +36,21 @@ jobs:
       run: |
         python -m pip install --upgrade pip
         pip install -r requirements.txt
-    - name: Analysing the ImageCaption code with pylint
+    - name: Analysing the ImageCaptioning code with pylint
       run: |
         pylint ImageCaptioning --rcfile=.github/pylint.conf
+    - name: Analysing the ObjectDetection code with pylint
+      run: |
+        pylint ObjectDetection --rcfile=.github/pylint.conf
+    - name: Analysing the SequenceLabeling code with pylint
+      run: |
+        pylint SequenceLabeling --rcfile=.github/pylint.conf
+    - name: Analysing the TextClassification code with pylint
+      run: |
+        pylint TextClassification --rcfile=.github/pylint.conf
+    - name: Analysing the MachineTranslation code with pylint
+      run: |
+        pylint MachineTranslation --rcfile=.github/pylint.conf
+    - name: Analysing the SuperResolution code with pylint
+      run: |
+        pylint SuperResolution --rcfile=.github/pylint.conf

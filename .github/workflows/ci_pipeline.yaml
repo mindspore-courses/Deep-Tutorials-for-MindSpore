@@ -39,9 +39,9 @@ jobs:
     - name: Analysing the ImageCaptioning code with pylint
       run: |
         pylint ImageCaptioning --rcfile=.github/pylint.conf
-    # - name: Analysing the ObjectDetection code with pylint
-    #   run: |
-    #     pylint ObjectDetection --rcfile=.github/pylint.conf
+    - name: Analysing the ObjectDetection code with pylint
+      run: |
+        pylint ObjectDetection --rcfile=.github/pylint.conf
     - name: Analysing the SequenceLabeling code with pylint
       run: |
         pylint SequenceLabeling --rcfile=.github/pylint.conf
